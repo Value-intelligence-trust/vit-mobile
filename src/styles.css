@@ -1,0 +1,64 @@
+:root {
+  --bg: var(--tg-theme-bg-color, #0a0a0f);
+  --surface: var(--tg-theme-secondary-bg-color, #141420);
+  --accent: #6366f1;
+  --text: var(--tg-theme-text-color, #ffffff);
+  --sub: var(--tg-theme-hint-color, #9ca3af);
+  --border: rgba(255, 255, 255, 0.08);
+  --r: 12px;
+}
+body { background: var(--bg); color: var(--text); min-height: 100vh; }
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+.app-header { padding: 12px 16px; background: #0a0a0f; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+.logo { font-size: 18px; font-weight: 700; }
+.stats-bar { display: flex; gap: 16px; }
+.stats-bar .stat { text-align: center; }
+.stats-bar .stat span { font-size: 14px; font-weight: 700; color: var(--accent); display: block; }
+.stats-bar .stat label { font-size: 10px; color: var(--sub); }
+.tabs { display: flex; background: var(--surface); border-bottom: 1px solid var(--border); }
+.tab { flex: 1; padding: 10px; background: none; border: none; border-bottom: 2px solid transparent; color: var(--sub); font-size: 13px; cursor: pointer; transition: all .2s; }
+.tab.active { color: var(--text); border-bottom-color: var(--accent); }
+.main { flex: 1; padding: 16px; overflow-y: auto; }
+.match-input { display: flex; flex-direction: column; gap: 12px; }
+.match-input h2 { font-size: 18px; font-weight: 700; }
+.sport-selector { display: flex; gap: 6px; flex-wrap: wrap; }
+.sport-btn { padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border); background: none; color: var(--sub); font-size: 12px; cursor: pointer; transition: all .2s; }
+.sport-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.team-row { display: flex; gap: 8px; align-items: center; }
+.team-row input { flex: 1; }
+.vs { color: var(--sub); font-size: 12px; flex-shrink: 0; }
+input { width: 100%; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); color: var(--text); font-size: 14px; outline: none; transition: border-color .2s; }
+input:focus { border-color: var(--accent); }
+.odds-row { display: flex; gap: 8px; }
+.odds-field { flex: 1; }
+.odds-field label { display: block; font-size: 11px; color: var(--sub); margin-bottom: 4px; }
+.odds-field input { padding: 8px; }
+.predict-btn { padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: var(--r); font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; transition: opacity .2s; }
+.predict-btn:disabled { opacity: .5; cursor: not-allowed; }
+.error-banner { padding: 10px 12px; background: rgba(239, 68, 68, .15); border: 1px solid rgba(239, 68, 68, .3); border-radius: var(--r); font-size: 13px; color: #fca5a5; }
+.prediction-card { background: var(--surface); border-radius: 16px; border: 1px solid var(--border); padding: 16px; display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+.card-header { display: flex; justify-content: space-between; align-items: center; }
+.confidence-badge { background: var(--accent); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+.grade { font-size: 13px; color: var(--sub); }
+.probs { display: flex; flex-direction: column; gap: 8px; }
+.prob-bar { display: flex; align-items: center; gap: 8px; }
+.prob-label { width: 36px; font-size: 13px; color: var(--sub); }
+.bar-track { flex: 1; height: 8px; background: rgba(255,255,255,.08); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width .5s ease; }
+.prob-value { width: 44px; text-align: right; font-size: 13px; font-weight: 600; }
+.bet-recommendation { background: rgba(99,102,241,.1); border: 1px solid rgba(99,102,241,.3); border-radius: var(--r); padding: 12px; text-align: center; }
+.bet-label { font-size: 11px; color: var(--sub); text-transform: uppercase; letter-spacing: 1px; }
+.bet-side { font-size: 22px; font-weight: 800; color: var(--accent); margin: 4px 0; }
+.bet-edge { font-size: 12px; color: #4ade80; }
+.markets-row { display: flex; gap: 8px; }
+.market { flex: 1; background: rgba(255,255,255,.04); border-radius: var(--r); padding: 10px; text-align: center; }
+.market-label { font-size: 11px; color: var(--sub); margin-bottom: 4px; }
+.market-value { font-size: 14px; font-weight: 700; }
+.model-breakdown { border-top: 1px solid var(--border); padding-top: 10px; }
+.model-breakdown summary { font-size: 12px; color: var(--sub); cursor: pointer; }
+.breakdown-list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.breakdown-row { display: flex; justify-content: space-between; font-size: 11px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.model-name { color: var(--sub); }
+.model-probs { font-family: monospace; }
+.placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 60vh; gap: 12px; color: var(--sub); }
+.placeholder span { font-size: 48px; }
